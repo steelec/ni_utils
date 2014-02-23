@@ -21,7 +21,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description = 'Calculate mean and standard deviation for ROIs, fill ROIs with these values.\n Output <fname>_ROI_avg.nii.gz and <fname>_ROI_std.nii.gz files to the input directory')
 parser.add_argument('-i', '--input', type=str, required=True, help='fmri timecourse file (4d)')
-parser.add_argument('-m', '--mask', type=str,  required=True, help='ROI mask file (unique integers, 3d)')
+parser.add_argument('-m', '--mask', type=str,  required=True, help='ROI mask file (unique non-zero numbers, 3d)')
 
 fmri_name=parser.parse_args().input
 mask_name=parser.parse_args().mask
