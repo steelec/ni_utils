@@ -4,9 +4,13 @@
 Feb 23, 2014
 Chris Steele
 
-Small program that reads in fmri timecourse and mask (single or multiple ROIs) and outputs a 4d file with the mean signal in ROIs over time. All voxels in the ROI have the mean value. Output files are placed in the same location as the inputs
+Small program that reads in fmri timecourse and mask (single or multiple ROIs) and outputs a 4d file 
+with the mean signal in ROIs over time, along with a file with the standard deviations. 
+All voxels in the ROI are given the same value. This is useful for pre-processing low SNR fMRI analyses
+that have specific ROIs.
+Output files are placed in the same location as the inputs
 
-usage: create_roi_volumes.py <path_to_4d_file> <path_to_ROI_masks_file>
+usage: create_roi_volumes.py -i <path_to_4d_file> -m <path_to_ROI_masks_file>
 '''
 
 import os
