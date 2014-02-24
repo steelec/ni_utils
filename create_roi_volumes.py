@@ -38,6 +38,7 @@ for fmri_name in fmri_names:
 
 	if not fmri_data[...,0].shape == mask_data.shape:
 		print('Your mask file does not have the same dimensions as your data (x,y,z). fmri: ' + str(np.shape(fmri_data)) + ', mask: ' + str(np.shape(mask_data)))
+		raise SystemExit(0)
 	else:
 		print('Mask and fmri dimensions fit. Good job.')
 
