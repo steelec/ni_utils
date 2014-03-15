@@ -10,7 +10,21 @@ import sys
 #
 #track_file=parser.parse_args().input
 #mask_file=parser.parse_args().mask
-    
+
+"""
+March 15, 2014
+Christopher J. Steele
+
+Program to mask streamlines data in trackvis format (trk) with provided ROI
+ - this will potentially be useful for masking connectivity depending on provided lesion locations
+ - this file could change to include the necessary measures/calculations required create the connectivity matrices that can be used here 
+
+Outputs the streamlines without those that cross the ROI (_masked.trk) and the streamlines that were removed (_cut.trk)
+These files are placed in the input directory (unless this is still hard-coded for testing!)
+Voxel settings and affine *should* be correct if all files were generated from the same base files
+
+XXX not sure if this will be a stand-alone or for use as an import function
+"""
 def mask_streamlines(track_fname,mask_fname):
     '''
     Christopher J. Steele
