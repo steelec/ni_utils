@@ -89,12 +89,15 @@ def rois_crossed(stream,roiData,voxelSize,verbose=False):
         y = int(stream[j, 1] / float(voxelSize[1]))
         z = int(stream[j, 2] / float(voxelSize[2]))
         
-        if roiData[x, y, z] == 1:
-            if verbose == True:
-                print('Voxel crossed at: ' + str(x)+','+str(y)+','+str(z))
-            return True
-        else:
-            pass
+        try:
+            if roiData[x, y, z] == 1:
+                if verbose == True:
+                    print('Voxel crossed at: ' + str(x)+','+str(y)+','+str(z))
+                return True
+            else:
+                pass
+        except IndexError:
+            raise ValueError("Streamline points are outside of target_mask")
     return False #no crossings of stream and ROI
 
 #%%
